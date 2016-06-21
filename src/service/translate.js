@@ -1514,7 +1514,13 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
       };
 
       var determineTranslation = function (translationId, interpolateParams, interpolationId, defaultTranslationText, uses) {
-        console.log('Translation async: ', translationId);
+        if (typeof $rootScope.translation_variables === 'undefined') {
+          $rootScope.translation_variables = {};
+        }
+        if (!(translationId in $rootScope.translation_variables)) { 
+          $rootScope.translation_variables[translationId] = true;
+        }
+
         var deferred = $q.defer();
 
         var table = uses ? $translationTable[uses] : $translationTable,
@@ -1573,7 +1579,13 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
       };
 
       var determineTranslationInstant = function (translationId, interpolateParams, interpolationId, uses) {
-        console.log('Translation sync: '+ translationId);
+        if (typeof $rootScope.translation_variables === 'undefined') {
+          $rootScope.translation_variables = {};
+        }
+        if (!(translationId in $rootScope.translation_variables)) { 
+          $rootScope.translation_variables[translationId] = true;
+        }
+
         var result, table = uses ? $translationTable[uses] : $translationTable,
             Interpolator = defaultInterpolator;
 
