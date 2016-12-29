@@ -1,5 +1,5 @@
 /*!
- * angular-translate - v2.11.0 - 2016-06-21
+ * angular-translate - v2.11.0 - 2016-12-29
  * 
  * Copyright (c) 2016 The angular-translate team, Pascal Precht; Licensed MIT
  */
@@ -1857,6 +1857,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
           $rootScope.translation_variables = {};
         }
         if (!(translationId in $rootScope.translation_variables)) { 
+          console.log(translationId);
           $rootScope.translation_variables[translationId] = true;
         }
 
@@ -1921,7 +1922,8 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         if (typeof $rootScope.translation_variables === 'undefined') {
           $rootScope.translation_variables = {};
         }
-        if (!(translationId in $rootScope.translation_variables)) { 
+        if (!(translationId in $rootScope.translation_variables)) {
+          console.log(translationId);
           $rootScope.translation_variables[translationId] = true;
         }
 
