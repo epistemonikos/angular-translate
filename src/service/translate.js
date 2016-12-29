@@ -1517,8 +1517,8 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         if (typeof $rootScope.translation_variables === 'undefined') {
           $rootScope.translation_variables = {};
         }
+        console.log(translationId);
         if (!(translationId in $rootScope.translation_variables)) { 
-          console.log(translationId);
           $rootScope.translation_variables[translationId] = true;
         }
 
@@ -1583,8 +1583,8 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         if (typeof $rootScope.translation_variables === 'undefined') {
           $rootScope.translation_variables = {};
         }
+        console.log(translationId);
         if (!(translationId in $rootScope.translation_variables)) {
-          console.log(translationId);
           $rootScope.translation_variables[translationId] = true;
         }
 
