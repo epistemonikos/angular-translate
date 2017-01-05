@@ -1517,7 +1517,6 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         if (typeof $rootScope.translation_variables === 'undefined') {
           $rootScope.translation_variables = {};
         }
-        console.log(translationId);
         if (!(translationId in $rootScope.translation_variables)) { 
           $rootScope.translation_variables[translationId] = true;
         }
@@ -1583,7 +1582,6 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         if (typeof $rootScope.translation_variables === 'undefined') {
           $rootScope.translation_variables = {};
         }
-        console.log(translationId);
         if (!(translationId in $rootScope.translation_variables)) {
           $rootScope.translation_variables[translationId] = true;
         }
@@ -2085,7 +2083,6 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
        * @return {string|object} translation
        */
       $translate.instant = function (translationId, interpolateParams, interpolationId, forceLanguage) {
-        console.log(translationId);
         // we don't want to re-negotiate $uses
         var uses = (forceLanguage && forceLanguage !== $uses) ? // we don't want to re-negotiate $uses
               (negotiateLocale(forceLanguage) || forceLanguage) : $uses;
